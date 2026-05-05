@@ -47,14 +47,26 @@ body{
 
 .position{
     font-size:13px;
-    color:#64748b;
+    color:#000000;
     margin:5px 0 10px;
+}
+.dark .position{
+    font-size:13px;
+    color:#ffffff;
+    margin:5px 0 10px;
+
 }
 
 .desc{
     font-size:14px;
     line-height:1.7;
-    color:#475569;
+    color:#030303;
+}
+.dark .desc{
+    font-size:14px;
+    line-height:1.7;
+    color:#ffffff;
+
 }
 
 /* RESPONSIVE */

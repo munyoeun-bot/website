@@ -1,142 +1,209 @@
 <!DOCTYPE html>
-<html lang="km">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hero 1920x500</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>ICD Homepage</title>
 
 <style>
+/* ===== ROOT ===== */
+:root{
+  --bg: #020617;
+  --card: #0f172a;
+  --text: #e2e8f0;
+  --subtext: #94a3b8;
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --border: #1e293b;
+}
 
-/* RESET */
+/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Kantumruy Pro', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-/* HERO */
-.hero{
-  width:100%;
-  height:500px;   /* 1920 x 500 */
-  position:relative;
-  overflow:hidden;
+/* ===== BODY ===== */
+body{
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* IMAGE */
-.hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  top:0;
-  left:0;
-}
-
-/* OVERLAY */
-.hero::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.45);
-}
-
-/* CONTENT */
-.hero-content{
-  position:relative;
-  z-index:2;
-  height:100%;
+/* ===== NAVBAR ===== */
+nav{
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
   align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:0 20px;
-  animation:fadeUp 1s ease;
+  padding:20px 10%;
+  background: var(--card);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
 }
 
-.hero-content h1{
+nav h1{
+  color: var(--primary);
+}
+
+nav a{
+  color: var(--text);
+  margin-left:20px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color: var(--primary);
+}
+
+/* ===== HERO ===== */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 10%;
+  gap:40px;
+}
+
+.hero-text h2{
   font-size:42px;
-  margin-bottom:12px;
+  margin-bottom:20px;
 }
 
-.hero-content p{
-  font-size:16px;
-  max-width:650px;
-  line-height:1.6;
-  margin-bottom:18px;
+.hero-text p{
+  color: var(--subtext);
+  margin-bottom:25px;
 }
 
-/* BUTTON */
-.hero-content button{
-  padding:12px 24px;
+.hero button{
+  background: var(--primary);
   border:none;
-  border-radius:8px;
-  background:#16a34a;
+  padding:12px 25px;
   color:white;
-  font-size:15px;
   cursor:pointer;
+  border-radius:6px;
+}
+
+.hero button:hover{
+  background: var(--primary-hover);
+}
+
+.hero img{
+  width:400px;
+  border-radius:10px;
+}
+
+/* ===== FEATURES ===== */
+.features{
+  padding:60px 10%;
+}
+
+.features h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background: var(--card);
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:10px;
   transition:0.3s;
 }
 
-.hero-content button:hover{
-  background:#22c55e;
-  transform:translateY(-3px);
+.card:hover{
+  transform:translateY(-5px);
+  border-color: var(--primary);
 }
 
-/* ANIMATION */
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.card h3{
+  margin-bottom:10px;
+  color: var(--primary);
 }
 
-/* RESPONSIVE */
+.card p{
+  color: var(--subtext);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid var(--border);
+  margin-top:40px;
+  color: var(--subtext);
+}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .hero{
-    height:350px;
+    flex-direction:column;
+    text-align:center;
   }
 
-  .hero-content h1{
-    font-size:24px;
-  }
-
-  .hero-content p{
-    font-size:13px;
+  .hero img{
+    width:100%;
   }
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+  <h1>ICD</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Course</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-
-  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-
-  <div class="hero-content">
-    <h1>សាលាអប់រំទំនើប</h1>
-    <p>
-      យើងផ្តល់ការអប់រំគុណភាពខ្ពស់ ដើម្បីអភិវឌ្ឍសិស្សឲ្យមានចំណេះដឹង និងជំនាញសម្រាប់អនាគត។
-    </p>
-    <button>ស្វែងយល់បន្ថែម</button>
+  <div class="hero-text">
+    <h2>Learn Technology with ICD</h2>
+    <p>Build your future with modern skills in coding, electronics, and innovation.</p>
+    <button>Get Started</button>
   </div>
-
+  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="hero">
 </section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Our Features</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>💻 Coding</h3>
+      <p>Learn HTML, CSS, JavaScript and build real projects.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 Arduino</h3>
+      <p>Create smart systems with sensors and automation.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Web Design</h3>
+      <p>Design modern and responsive websites.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 ICD. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

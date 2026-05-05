@@ -285,7 +285,7 @@ html, body {
   width:100%;
   overflow:hidden;
   padding:50px 0;
-  background:#f8fafc;
+  /* background:#f8fafc; */
 }
 
 /* ===== FADE EDGES (ULTRA LOOK) ===== */
