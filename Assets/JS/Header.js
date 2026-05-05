@@ -1,65 +1,42 @@
-// NAV SHRINK
-const nav = document.getElementById("nav");
-
-if (nav) {
-  window.addEventListener("scroll", () => {
-    nav.classList.toggle("shrink", window.scrollY > 50);
-  });
-}
-
-
-// DROPDOWN
-document.querySelectorAll(".dropdown-toggle").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    const parent = btn.closest(".dropdown");
-
-    document.querySelectorAll(".dropdown").forEach(d => {
-      if (d !== parent) d.classList.remove("active");
-    });
-
-    parent.classList.toggle("active");
-  });
-});
-
-
-// CLOSE WHEN CLICK OUTSIDE
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".dropdown")) {
-    document.querySelectorAll(".dropdown").forEach(d => {
-      d.classList.remove("active");
-    });
-  }
-});
-
-
-// MOBILE MENU
-const hamburger = document.querySelector(".hamburger");
-const menu = document.querySelector(".menu");
-
-if (hamburger && menu) {
-  hamburger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
-}
-
-
-// DARK MODE
 const modeBtn = document.querySelector(".mode");
 
 if (modeBtn) {
+
+  // set icon ពេល load
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    modeBtn.innerHTML = "☀️";
+  } else {
+    modeBtn.innerHTML = "🌙";
+  }
+
   modeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    // Save mode
-    localStorage.setItem("theme", 
-      document.body.classList.contains("dark") ? "dark" : "light"
-    );
-  });
+    const isDark = document.body.classList.contains("dark");
 
-  // Load saved mode
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  }
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // change icon
+    modeBtn.innerHTML = isDark ? "☀️" : "🌙";
+  });
 }
+/*dark mode store*/
+// check saved mode when page load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
+// toggle button
+const modeBtn = document.querySelector(".mode");
+
+modeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  // save mode
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});

@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICD វិទ្យាស្ថានអភិវឌ្ឍន៍សហគមន៍</title>
+  <!-- dark mode store -->
+   <script>
+    if(localStorage.getItem("theme") === "dark"){
+      document.documentElement.classList.add("dark");
+    }
+    </script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="./Assets/css/index.css">
@@ -16,9 +22,10 @@
   <script src="./Assets/JS/include.js" defer></script>
   <script src="./Assets/JS/animation.js" defer></script>
   <script src="./Assets/JS/Header.js" defer></script>
+  
 </head>
 
-<body class="dark" style="background-color: white;">
+<body style="background-color: white;">
 
   <!-- HEADER -->
   <header id="header"></header>

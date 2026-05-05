@@ -235,6 +235,8 @@ body.dark .dropdown-toggle {
 
 body.dark .dropdown-content {
   background: var(--primary);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 body.dark .dropdown-content a {
