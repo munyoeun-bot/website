@@ -116,7 +116,7 @@ nav.shrink {
   top: 45px;
   left: 0;
   min-width: 200px;
-  background: rgba(255, 255, 255, 0.95);
+  background:var(--primary);
   backdrop-filter: blur(14px);
   border-radius: 12px;
   border: 1px solid rgba(212, 175, 55, 0.3);
@@ -124,7 +124,7 @@ nav.shrink {
   flex-direction: column;
   /* overflow:hidden; */
   animation: fade 0.2s ease;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .dropdown-content a {
@@ -135,7 +135,7 @@ nav.shrink {
 
 .dropdown-content a:hover {
   background: var(--primary);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .dropdown.active .dropdown-content {
@@ -245,7 +245,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background: #00ff73;
+  /* background: #00ff73; */
 }
 
 #nav {
