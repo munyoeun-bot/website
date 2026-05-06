@@ -119,10 +119,12 @@ body{
 
 .header-contact h1{
     font-size:40px;
+    color: #000000;
 }
 
 .header-contact p{
     opacity:0.8;
+    color: #000000;
 }
 
 /* ================= SECTION 3 ================= */
@@ -195,6 +197,7 @@ body{
 /* SOCIAL */
 .social3 p{
     margin-bottom:10px;
+    color: #000000;
 }
 
 .icons3{

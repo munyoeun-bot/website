@@ -1,3 +1,10 @@
+:root {
+  --primary: #16a34a;
+  --gold: #d4af37;
+  --dark: #0f172a;
+  --bg: #f8fafc;
+}
+
 /* ================= slider ================= */
 .slider{
   position:relative;
@@ -198,7 +205,7 @@ body{
 }
 
 .card3{
-    background:linear-gradient(145deg,#111827,#1f2937);
+    background-color: var(--primary);
     border-radius:15px;
     padding:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
@@ -215,7 +222,7 @@ body{
 }
 
 .card3 p{
-    color:#cbd5e1;
+    color:#ffffff;
     font-size:14px;
     line-height:1.6;
 }
@@ -225,13 +232,13 @@ body{
 ========================= */
 .section4{
     padding:80px 10%;
-    background:#0f172a;
+    /* background:#0f172a; */
 }
 
 .title4{
     font-size:36px;
     text-align:center;
-    color:#38bdf8;
+    color:var(--primary);
     margin-bottom:40px;
     animation:fadeIn 1s ease;
 }
@@ -243,7 +250,7 @@ body{
 }
 
 .card4{
-    background:linear-gradient(145deg,#111827,#1e293b);
+  background-color: var(--primary);
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
@@ -273,7 +280,7 @@ body{
 }
 
 .content4 p{
-    color:#cbd5e1;
+    color:#ffffff;
     font-size:14px;
 }
 

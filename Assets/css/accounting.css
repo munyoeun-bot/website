@@ -1,3 +1,10 @@
+:root {
+  --primary: #16a34a;
+  --gold: #d4af37;
+  --dark: #0f172a;
+  --bg: #f8fafc;
+}
+
 /* ================= slider ================= */
 .slider{
   position:relative;
@@ -29,7 +36,7 @@
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  background:linear-gradient(120deg, rgba(5, 3, 3, 0.7), rgba(0,0,0,0.2));
 }
 
 /* ================= NAV2 (TOP RIGHT MENU) ================= */
@@ -88,7 +95,7 @@
   transform:translateY(-50%);
   max-width:420px;
 
-  background:rgba(0,0,0,0.35);
+  background:rgba(255, 233, 233, 0);
   backdrop-filter:blur(10px);
   padding:20px;
   border-left:4px solid #d4af37;
@@ -180,13 +187,14 @@ body{
 .header-acc{
     text-align:center;
     padding:70px 20px;
-    background:linear-gradient(135deg,#1e293b,#334155);
     color:white;
+    background-color: var(--primary);
 }
 
 .header-acc h1{
     font-size:40px;
     margin-bottom:10px;
+    
 }
 
 .header-acc p{
@@ -202,7 +210,7 @@ body{
 .title3{
     text-align:center;
     font-size:34px;
-    color:#1e293b;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -215,11 +223,11 @@ body{
 
 /* CARD */
 .card3{
-    background:white;
+    background:var(--primary);
     border-radius:14px;
     padding:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    border-top:4px solid #3b82f6;
+    border-top:4px solid var(--gold);
     transition:0.4s;
 }
 
@@ -228,26 +236,26 @@ body{
 }
 
 .card3 h3{
-    color:#1d4ed8;
+    color:white;
     margin-bottom:10px;
 }
 
 .card3 p{
     font-size:14px;
-    color:#475569;
+    color:#ffffff;
     line-height:1.6;
 }
 
 /* ================= SECTION 4 ================= */
 .section4{
     padding:70px 10%;
-    background:#eef2ff;
+    /* background:#eef2ff; */
 }
 
 .title4{
     text-align:center;
     font-size:34px;
-    color:#1e3a8a;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -260,7 +268,7 @@ body{
 
 /* CARD */
 .card4{
-    background:white;
+    background:var(--primary);
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -284,13 +292,13 @@ body{
 }
 
 .content4 h3{
-    color:#1d4ed8;
+    color:white;
     margin-bottom:8px;
 }
 
 .content4 p{
     font-size:14px;
-    color:#475569;
+    color:white;
     line-height:1.6;
 }
 

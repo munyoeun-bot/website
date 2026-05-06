@@ -383,7 +383,7 @@ html, body {
 
 .ann-header h2 {
   font-size: 34px;
-  color: #065f46;
+  color: var(--primary-600);
 }
 
 .ann-header p {

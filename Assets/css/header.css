@@ -206,7 +206,7 @@ nav.shrink {
 
 /* DARK MODE */
 body.dark {
-  background: var(--dark);
+  /* background: var(--dark); */
   color: white;
 }
 

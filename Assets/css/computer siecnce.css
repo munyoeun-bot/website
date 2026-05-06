@@ -1,12 +1,8 @@
 :root {
-  --bg: #deeb2a ;
-  --text: rgb(193, 177, 8);
-  --muted: #1c3463;
-  --primary-700: #166534;
-  --surface: #299444;
-  --border: #aea30b;
-  --Soft: #137e38;
-  --Accen: #22c55e;
+  --primary: #16a34a;
+  --gold: #d4af37;
+  --dark: #0f172a;
+  --bg: #f8fafc;
 }
 /* ប្រើ font Khmer OS Moul សម្រាប់ hero content */
 
@@ -304,13 +300,13 @@ body {
 .text3 {
     font-size: 18px;
     line-height: 1.8;
-    color: #cbd5e1;
+    color:var(--primary);
     animation: slideLeft3 1.2s ease;
 }
 
 /* cards */
 .card3 {
-    background: linear-gradient(145deg, #111827, #1f2937);
+    background-color: var(--primary);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
@@ -385,7 +381,7 @@ body {
 
 /* CARD */
 .card4{
-    background: linear-gradient(145deg,#111827,#1f2937);
+    background-color: var(--primary);
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
@@ -417,13 +413,13 @@ body {
 
 .content4 h3{
     font-size:20px;
-    color:#facc15;
+    color:var(--gold);
     margin-bottom:10px;
 }
 
 .content4 p{
     font-size:15px;
-    color:#cbd5e1;
+    color:white;
     line-height:1.6;
 }
 
