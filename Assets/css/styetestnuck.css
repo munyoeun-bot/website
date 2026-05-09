@@ -314,7 +314,7 @@ html, body {
 .slider4 .track{
   display:flex;
   width:max-content;
-  animation:scroll 14s linear infinite;
+  animation:scroll 70s linear infinite;
 }
 
 /* ITEM */
