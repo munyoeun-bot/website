@@ -188,6 +188,7 @@ body{
 .history4{
     background:#ffffff;
     padding:25px;
+    color: #0f172a;
     border-radius:12px;
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
@@ -215,7 +216,7 @@ color: #137e38;
 }
 
 .stat{
-    background:white;
+    background:rgb(162, 158, 158);
     padding:20px;
     border-radius:12px;
     text-align:center;
@@ -256,8 +257,10 @@ color: #137e38;
     .grid4{
         grid-template-columns:1fr;
     }
-
     .hero h1{
         font-size:28px;
     }
+}
+body.dark.history4 p{
+    color: #0f172a;
 }

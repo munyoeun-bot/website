@@ -52,6 +52,7 @@ body{
 .hero-content h1{
   font-size:42px;
   margin-bottom:12px;
+  color: #15803d;
 }
 
 .hero-content p{
@@ -98,6 +99,7 @@ body{
 
   .hero-content h1{
     font-size:24px;
+    color: #15803d;
   }
 
   .hero-content p{

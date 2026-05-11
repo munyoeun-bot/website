@@ -9,6 +9,26 @@ if (modeBtn) {
   } else {
     modeBtn.innerHTML = "🌙";
   }
+  //load all page
+  const btn = document.getElementById("btn");
+
+/* LOAD theme when page open */
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+}
+
+/* CLICK toggle */
+btn.onclick = () => {
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark");
+    }else{
+        localStorage.setItem("theme","light");
+    }
+
+};
 
   modeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
