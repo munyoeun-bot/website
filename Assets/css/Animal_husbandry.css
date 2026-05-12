@@ -207,7 +207,7 @@ body{
 .title3{
     text-align:center;
     font-size:34px;
-    color:#16a34a;
+    color:#166534;
     margin-bottom:40px;
 }
 
@@ -221,42 +221,40 @@ body{
     background:white;
     border-radius:15px;
     padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    border-bottom:4px solid #22c55e;
     transition:0.4s;
-    border-left:5px solid #22c55e;
 }
 
 .card3:hover{
     transform:translateY(-8px);
+    background:#ecfdf5;
 }
 
 .card3 h3{
-    color:#16a34a;
+    color:#15803d;
     margin-bottom:10px;
 }
 
 .card3 p{
     font-size:14px;
+    color:#475569;
     line-height:1.6;
-    color:#334155;
 }
 
-/* =======================
-   SECTION 4 (ADVANCED)
-======================= */
+/* ================= SECTION 4 (element4) ================= */
 .section4{
     padding:70px 10%;
-    background:#ecfdf5;
+    /* background:#ffffff; */
 }
 
 .title4{
     text-align:center;
     font-size:34px;
-    color:#065f46;
+    color:#14532d;
     margin-bottom:40px;
 }
 
-/* GRID */
 .grid4{
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -273,13 +271,13 @@ body{
 }
 
 .card4:hover{
-    transform:scale(1.03);
+    transform:scale(1.04);
 }
 
 /* IMAGE */
 .card4 img{
     width:100%;
-    height:200px;
+    height:190px;
     object-fit:cover;
 }
 
@@ -299,7 +297,7 @@ body{
     line-height:1.6;
 }
 
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 .card3, .card4{
     animation:fadeUp 1s ease;
 }
@@ -309,9 +307,7 @@ body{
     to{opacity:1; transform:translateY(0);}
 }
 
-/* =======================
-   RESPONSIVE
-======================= */
+/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
     .grid3,.grid4{
         grid-template-columns:1fr 1fr;
@@ -323,7 +319,7 @@ body{
         grid-template-columns:1fr;
     }
 
-    .header-vet h1{
+    .hero-agri h1{
         font-size:28px;
     }
 }

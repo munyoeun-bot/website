@@ -210,56 +210,54 @@ body{
 .title3{
     text-align:center;
     font-size:34px;
-    color:var(--primary);
+    color:#166534;
     margin-bottom:40px;
 }
 
-/* GRID */
 .grid3{
     display:grid;
     grid-template-columns: repeat(3,1fr);
     gap:20px;
 }
 
-/* CARD */
 .card3{
-    background:var(--primary);
-    border-radius:14px;
+    background:white;
+    border-radius:15px;
     padding:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    border-top:4px solid var(--gold);
+    border-bottom:4px solid #22c55e;
     transition:0.4s;
 }
 
 .card3:hover{
     transform:translateY(-8px);
+    background:#ecfdf5;
 }
 
 .card3 h3{
-    color:white;
+    color:#15803d;
     margin-bottom:10px;
 }
 
 .card3 p{
     font-size:14px;
-    color:#ffffff;
+    color:#475569;
     line-height:1.6;
 }
 
-/* ================= SECTION 4 ================= */
+/* ================= SECTION 4 (element4) ================= */
 .section4{
     padding:70px 10%;
-    /* background:#eef2ff; */
+    /* background:#ffffff; */
 }
 
 .title4{
     text-align:center;
     font-size:34px;
-    color:var(--primary);
+    color:#14532d;
     margin-bottom:40px;
 }
 
-/* GRID */
 .grid4{
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -268,7 +266,7 @@ body{
 
 /* CARD */
 .card4{
-    background:var(--primary);
+    background:white;
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -276,7 +274,7 @@ body{
 }
 
 .card4:hover{
-    transform:scale(1.03);
+    transform:scale(1.04);
 }
 
 /* IMAGE */
@@ -292,13 +290,13 @@ body{
 }
 
 .content4 h3{
-    color:white;
+    color:#16a34a;
     margin-bottom:8px;
 }
 
 .content4 p{
     font-size:14px;
-    color:white;
+    color:#475569;
     line-height:1.6;
 }
 
@@ -324,7 +322,7 @@ body{
         grid-template-columns:1fr;
     }
 
-    .header-acc h1{
+    .hero-agri h1{
         font-size:28px;
     }
 }
