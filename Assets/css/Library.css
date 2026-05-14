@@ -6,19 +6,60 @@ body{
 }
 
 /* HERO */
-.hero-lib{
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(135deg,#16a34a,#22c55e);
-    color:white;
+.hero{
+  width:100%;
+  height:500px;   /* 1920 x 500 */
+  position:relative;
+  overflow:hidden;
 }
 
-.hero-lib h1{
-    font-size:40px;
+/* IMAGE */
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  top:0;
+  left:0;
 }
 
-.hero-lib p{
-    opacity:0.9;
+/* OVERLAY */
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+}
+
+/* CONTENT */
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:0 20px;
+  animation:fadeUp 1s ease;
+}
+
+.hero-content h1{
+  font-size:42px;
+  margin-bottom:12px;
+  color: #16a34a;
+}
+
+.hero-content p{
+  font-size:16px;
+  max-width:650px;
+  line-height:1.6;
+  margin-bottom:18px;
 }
 
 /* ================= SECTION 3 ================= */
@@ -30,7 +71,7 @@ body{
     text-align:center;
     font-size:32px;
     margin-bottom:40px;
-    color:#166534;
+color: #15803d;
 }
 
 /* INFO GRID */
@@ -67,6 +108,97 @@ body{
 /* ================= SECTION 4 ================= */
 .section4{
     padding:70px 10%;
+    color: #16a34a;
+}
+
+.title4{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:40px;
+    color:#16a34a;
+}
+
+/* GRID */
+.grid4{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+
+/* GALLERY CARD */
+.card4{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.card4 img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+/* overlay */
+.overlay4{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:0.4s;
+}
+
+.overlay4 h3{
+    color:#22c55e;
+}
+
+.overlay4 p{
+    font-size:13px;
+    color:#e2e8f0;
+}
+
+/* hover effect */
+.card4:hover img{
+    transform:scale(1.1);
+}
+
+.card4:hover .overlay4{
+    opacity:1;
+}
+
+/* ================= ANIMATION ================= */
+.card3, .card4{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .grid3,.grid4{
+        grid-template-columns:1fr 1fr;
+    
+    }
+}
+
+@media(max-width:600px){
+    .grid3,.grid4{
+        grid-template-columns:1fr;
+    }
+
+    .hero-act h1{
+        font-size:28px;
+    }
+}/* ================= SECTION 4 ================= */
+.section4{
+    padding:70px 10%;
     background:#f1f5f9;
 }
 
@@ -74,7 +206,7 @@ body{
     text-align:center;
     font-size:32px;
     margin-bottom:40px;
-    color:#14532d;
+color: #15803d;
 }
 
 /* BOOK GRID */

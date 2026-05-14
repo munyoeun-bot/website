@@ -92,183 +92,109 @@ body {
     border-radius: 25px;
     cursor: pointer;
 }
-/* ================= slider ================= */
-.slider{
+/* HERO */
+.hero{
+  width:100%;
+  height:500px;   /* 1920 x 500 */
   position:relative;
-  height:75vh;
-  margin:20px;
   overflow:hidden;
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
-.slides{
-  display:flex;
-  height:100%;
-  transition:transform 0.7s ease;
-}
-
-.slide{
-  min-width:100%;
-  position:relative;
-}
-
-.slide img{
+/* IMAGE */
+.hero img{
   width:100%;
   height:100%;
   object-fit:cover;
+  position:absolute;
+  top:0;
+  left:0;
 }
 
-/* DARK OVERLAY */
-.overlay{
+/* OVERLAY */
+.hero::after{
+  content:"";
   position:absolute;
-  inset:0;
-  background:linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
 }
 
-/* ================= NAV2 (TOP RIGHT MENU) ================= */
-.nav2{
-  position:absolute;
-  top:15px;
-  right:15px;
-
+/* CONTENT */
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
   display:flex;
-  gap:10px;
-
-  background:rgba(0,0,0,0.35);
-  padding:8px 12px;
-  border-radius:12px;
-  backdrop-filter:blur(10px);
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:0 20px;
+  animation:fadeUp 1s ease;
 }
 
-.nav2 button{
-  background:#d4af37;
+.hero-content h1{
+  font-size:42px;
+  margin-bottom:12px;
+  color: #15803d;
+}
+
+.hero-content p{
+  font-size:16px;
+  max-width:650px;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.hero-content button{
+  padding:12px 24px;
   border:none;
-  padding:6px 10px;
   border-radius:8px;
-  font-weight:600;
+  background:#16a34a;
+  color:white;
+  font-size:15px;
   cursor:pointer;
   transition:0.3s;
 }
 
-.nav2 button:hover{
-  background:white;
-  color:black;
+.hero-content button:hover{
+  background:#22c55e;
+  transform:translateY(-3px);
 }
 
-/* ================= BADGE ================= */
-.badge{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:#16a34a;
-  color:white;
-  padding:5px 10px;
-  font-size:12px;
-  border-radius:20px;
-  animation:float 3s infinite ease-in-out;
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-5px);}
-}
-
-/* ================= TEXT BOX ================= */
-.content{
-  position:absolute;
-  top:50%;
-  left:70px;
-  transform:translateY(-50%);
-  max-width:420px;
-
-  background:rgba(0,0,0,0.35);
-  backdrop-filter:blur(10px);
-  padding:20px;
-  border-left:4px solid #d4af37;
-  border-radius:14px;
-  color:white;
-}
-
-.content h2{
-  font-size:28px;
-  margin:0 0 10px;
-  background:linear-gradient(90deg,#fff,#d4af37);
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.content p{
-  font-size:15px;
-  color:#e5e7eb;
-}
-
-/* ================= NAV BUTTONS ================= */
-.nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.4);
-  border:none;
-  color:white;
-  font-size:24px;
-  padding:10px;
-  border-radius:50%;
-  cursor:pointer;
-}
-
-.nav:hover{
-  background:#d4af37;
-  color:black;
-}
-
-.prev{left:15px;}
-.next{right:15px;}
-
-/* ================= DOTS ================= */
-.dots{
-  position:absolute;
-  bottom:15px;
-  width:100%;
-  text-align:center;
-}
-
-.dots span{
-  width:9px;
-  height:9px;
-  margin:5px;
-  display:inline-block;
-  background:white;
-  opacity:0.4;
-  border-radius:50%;
-  cursor:pointer;
-}
-
-.dots .active{
-  background:#d4af37;
-  opacity:1;
-}
-
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:768px){
-  .slider{height:60vh;}
-
-  .content{
-    left:20px;
-    max-width:260px;
+  .hero{
+    height:350px;
   }
 
-  .content h2{font-size:20px;}
-  .content p{font-size:13px;}
+  .hero-content h1{
+    font-size:24px;
+    color: #15803d;
+  }
+
+  .hero-content p{
+    font-size:13px;
+  }
 }
-/*======= content =====*/
-body {
-    margin: 0;
-    font-family: "Kantumruy Pro", sans-serif;
-    background: #0f172a;
-    color: white;
-}
+
+
 
 /* ===== SECTION 3 ===== */
 .section3 {
