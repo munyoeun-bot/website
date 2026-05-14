@@ -60,3 +60,4 @@ modeBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+    /* LANGUAGE SWITCH */

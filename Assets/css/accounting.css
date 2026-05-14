@@ -210,7 +210,7 @@ body{
 .title3{
     text-align:center;
     font-size:34px;
-    color:#166534;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -235,13 +235,13 @@ body{
 }
 
 .card3 h3{
-    color:#15803d;
+    color:var(--primary);
     margin-bottom:10px;
 }
 
 .card3 p{
     font-size:14px;
-    color:#475569;
+    color:var(--dark);
     line-height:1.6;
 }
 
@@ -254,7 +254,7 @@ body{
 .title4{
     text-align:center;
     font-size:34px;
-    color:#14532d;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -296,7 +296,7 @@ body{
 
 .content4 p{
     font-size:14px;
-    color:#475569;
+    color:var(--dark);
     line-height:1.6;
 }
 

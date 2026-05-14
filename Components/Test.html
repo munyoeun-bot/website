@@ -1,172 +1,45 @@
 <!DOCTYPE html>
-<html lang="km">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>School UI</title>
+<title>Next Level School UI</title>
+
+<!-- Khmer + English Font -->
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../Assets/CSS/header.css">
 <style>
-  :root {
-  --primary: #16a34a;
-  --bg: #ffffff;
-  --text: #0f172a;
+    /* LANGUAGE STYLE */
+
+body.english .km{
+  display:none;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Kantumruy Pro', sans-serif;
+body:not(.english) .en{
+  display:none;
 }
 
-/* BODY */
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.4s;
+.en{
+  font-family:'Poppins', sans-serif;
 }
 
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #ddd;
+/* LANGUAGE BUTTON */
+
+.lang-btn{
+  cursor:pointer;
+  padding:6px 12px;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  font-size:14px;
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-/* MENU */
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.menu a,
-.dropdown-toggle {
-  text-decoration: none;
-  color: var(--text);
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-/* hover */
-.menu a:hover,
-.dropdown-toggle:hover {
-  background: var(--primary);
-  color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  min-width: 180px;
-
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-
-  display: none;
-  flex-direction: column;
-}
-
-.dropdown-content a {
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-.dropdown-content a:hover {
-  background: var(--primary);
-  color: white;
-}
-
-.dropdown.active .dropdown-content {
-  display: flex;
-}
-
-/* MODE */
-.mode {
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-
-.mode:hover {
-  background: var(--primary);
-  color: white;
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-}
-
-/* DARK MODE */
-html.dark body {
-  background: linear-gradient(135deg, #16a34a, #0f172a);
-  color: white;
-}
-
-html.dark nav {
-  background: rgba(22,163,74,0.85);
-}
-
-html.dark .menu a,
-html.dark .dropdown-toggle {
-  color: white;
-}
-
-html.dark .dropdown-content {
-  background: #0f172a;
-}
-
-html.dark .dropdown-content a {
-  color: white;
+.lang-btn:hover{
+  opacity:0.8;
 }
 </style>
-
-<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
-<!-- 🔥 Load dark mode before page renders -->
-<script>
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark");
-  }
-</script>
-
 </head>
 
 <body>
@@ -174,72 +47,127 @@ html.dark .dropdown-content a {
 <nav id="nav">
   <div class="nav-container">
 
+    <!-- LOGO -->
     <div class="logo">
-      <img src="https://via.placeholder.com/50">
-      <div>
-        <h3>School Name</h3>
-        <small>Institute</small>
+      <img src="../Assets/Image/anime.jpg">
+
+      <div class="logo-text">
+        <h1 class="km">សាកលវិទ្យាល័យជាតិជាស៊ីមកំចាយមារ</h1>
+        <h1 class="en">Chea Sim Kamchaymear National University</h1>
+
+        <p class="km">វិទ្យាស្ថានអភិវឌ្ឍន៍សហគមន៍</p>
+        <p class="en">Institute of Community Development</p>
       </div>
     </div>
 
+    <!-- MENU -->
     <div class="menu">
 
-      <a href="#">Home</a>
+      <a href="../index.html">
+        <span class="km">ទំព័រដើម</span>
+        <span class="en">Home</span>
+      </a>
 
+      <!-- INFO -->
       <div class="dropdown">
-        <div class="dropdown-toggle">Info ▾</div>
+
+        <div class="dropdown-toggle">
+          <span class="km">ព័ត៌មាន</span>
+          <span class="en">Information</span> ▾
+        </div>
+
         <div class="dropdown-content">
-          <a href="#">Item 1</a>
-          <a href="#">Item 2</a>
+
+          <a href="../Life_Skills_Activities.html">
+            <span class="km">បំណិនជីវិត</span>
+            <span class="en">Life Skills</span>
+          </a>
+
+          <a href="../About_school.html">
+            <span class="km">ប្រវត្តិសាលា</span>
+            <span class="en">School History</span>
+          </a>
+
+          <a href="../DIctionary.html">
+            <span class="km">គ្រូបង្រៀន</span>
+            <span class="en">Teachers</span>
+          </a>
+
+          <a href="../Anungment.html">
+            <span class="km">កម្មវិធីនានា</span>
+            <span class="en">Events</span>
+          </a>
+
+          <a href="../Generl_study.html">
+            <span class="km">សកម្មភាពម៉ោងអនុវត្ត</span>
+            <span class="en">Practice Activities</span>
+          </a>
+
+          <a href="../Library.html">
+            <span class="km">បណ្ណាល័យទំនើប</span>
+            <span class="en">Modern Library</span>
+          </a>
+
         </div>
       </div>
 
-      <a href="#">Contact</a>
+      <!-- SKILL -->
+      <div class="dropdown">
 
-      <div class="mode">🌙</div>
+        <div class="dropdown-toggle">
+          <span class="km">ជំនាញ</span>
+          <span class="en">Majors</span> ▾
+        </div>
 
-      <div class="hamburger">☰</div>
+        <div class="dropdown-content">
+
+          <a href="../computer siecnce.html">
+            <span class="km">វិទ្យាសាស្រ្តកុំព្យូទ័រ</span>
+            <span class="en">Computer Science</span>
+          </a>
+
+          <a href="../Electronic.html">
+            <span class="km">អេឡិចត្រូនិក</span>
+            <span class="en">Electronics</span>
+          </a>
+
+          <a href="../Accounting.html">
+            <span class="km">គណនេយ្យ</span>
+            <span class="en">Accounting</span>
+          </a>
+
+          <a href="../Animal_husbanday.html">
+            <span class="km">ផលិតកម្មសត្វ</span>
+            <span class="en">Animal Husbandry</span>
+          </a>
+
+          <a href="../Agronomy.html">
+            <span class="km">ក្សេត្រសាស្រ្ត</span>
+            <span class="en">Agronomy</span>
+          </a>
+
+        </div>
+      </div>
+
+      <a href="../Community.html">
+        <span class="km">ទំនាក់ទំនង</span>
+        <span class="en">Contact</span>
+      </a>
+
+      <!-- LANGUAGE BUTTON -->
+      <div class="lang-btn">EN</div>
+
+      <!-- DARK MODE -->
+      <div class="mode">🎨</div>
 
     </div>
 
+    <!-- HAMBURGER -->
+    <div class="hamburger">☰</div>
+
   </div>
 </nav>
-<script>
-  const modeBtn = document.querySelector(".mode");
 
-// LOAD MODE ON PAGE OPEN
-if (localStorage.getItem("theme") === "dark") {
-  document.documentElement.classList.add("dark");
-}
-
-// ICON UPDATE
-function updateIcon() {
-  modeBtn.innerHTML = document.documentElement.classList.contains("dark")
-    ? "☀️"
-    : "🌙";
-}
-
-updateIcon();
-
-// TOGGLE DARK MODE
-modeBtn.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-
-  const isDark = document.documentElement.classList.contains("dark");
-
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-
-  updateIcon();
-});
-
-// DROPDOWN
-document.querySelectorAll(".dropdown-toggle").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.classList.toggle("active");
-  });
-});
-</script>
-
-<script src="script.js"></script>
+<script></script>
 </body>
 </html>

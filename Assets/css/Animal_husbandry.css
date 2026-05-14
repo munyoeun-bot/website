@@ -1,4 +1,9 @@
-
+:root {
+  --primary: #16a34a;
+  --gold: #d4af37;
+  --dark: #0f172a;
+  --bg: #f8fafc;
+}
 /* ================= slider ================= */
 .slider{
   position:relative;
@@ -207,7 +212,7 @@ body{
 .title3{
     text-align:center;
     font-size:34px;
-    color:#166534;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -232,13 +237,13 @@ body{
 }
 
 .card3 h3{
-    color:#15803d;
+    color:var(--primary);
     margin-bottom:10px;
 }
 
 .card3 p{
     font-size:14px;
-    color:#475569;
+    color:var(--dark);
     line-height:1.6;
 }
 
@@ -251,7 +256,7 @@ body{
 .title4{
     text-align:center;
     font-size:34px;
-    color:#14532d;
+    color:var(--primary);
     margin-bottom:40px;
 }
 
@@ -287,13 +292,13 @@ body{
 }
 
 .content4 h3{
-    color:#16a34a;
+    color:var(--primary);
     margin-bottom:8px;
 }
 
 .content4 p{
     font-size:14px;
-    color:#475569;
+    color:var(--dark);
     line-height:1.6;
 }
 
