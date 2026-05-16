@@ -111,11 +111,11 @@ html, body {
 /* ================= slider ================= */
 .slider{
   position:relative;
-  padding-top: 42px;
+  padding-top: 46px;
   height:75vh;
   margin:20px;
   overflow:hidden;
-  border-radius:18px;
+  /* border-radius:18px; */
   box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
