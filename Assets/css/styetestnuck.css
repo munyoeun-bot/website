@@ -140,7 +140,7 @@ html, body {
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  /* background:linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.2)); */
 }
 
 /* ================= NAV2 (TOP RIGHT MENU) ================= */

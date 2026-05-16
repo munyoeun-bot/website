@@ -1,173 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ហ្គេមអាប៉ោង - កំណែគ្មានសម្លេង</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap');
 
-<title>Next Level School UI</title>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a2e;
+            font-family: 'Kantumruy Pro', sans-serif;
+            overflow: hidden;
+        }
 
-<!-- Khmer + English Font -->
-<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        .app-container {
+            width: 360px;
+            height: 680px;
+            background: linear-gradient(180deg, #2c3e50 0%, #000000 100%);
+            border-radius: 35px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid #16213e;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
 
-<link rel="stylesheet" href="../Assets/CSS/header.css">
-<style>
-    /* LANGUAGE STYLE */
+        .header { margin-top: 50px; text-align: center; }
+        .header h2 { font-size: 24px; margin-bottom: 5px; }
+        .warning { color: #ff4d4d; font-weight: bold; font-size: 14px; }
 
-body.english .km{
-  display:none;
-}
+        .game-area {
+            position: relative;
+            margin-top: 40px;
+            width: 340px;
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-body:not(.english) .en{
-  display:none;
-}
+        /* ចានធំខាងក្រោម */
+        .big-plate {
+            position: absolute;
+            width: 330px; 
+            height: 220px;
+            background: radial-gradient(ellipse at center, #ffffff 0%, #bdc3c7 60%, #95a5a6 100%);
+            border-radius: 50%;
+            border: 8px solid #dfe6e9;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
 
-.en{
-  font-family:'Poppins', sans-serif;
-}
+        .dice-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* LANGUAGE BUTTON */
+        .back-stick {
+            position: absolute;
+            width: 7px;
+            height: 150px;
+            background: #2d3436;
+            border-radius: 4px;
+            z-index: 1;
+        }
 
-.lang-btn{
-  cursor:pointer;
-  padding:6px 12px;
-  border-radius:8px;
-  background:var(--primary);
-  color:white;
-  font-size:14px;
-}
+        .dice {
+            width: 70px;
+            height: 110px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            font-weight: bold;
+            color: #2d3436;
+            z-index: 2;
+        }
 
-.lang-btn:hover{
-  opacity:0.8;
-}
-</style>
+        /* ចានក្រប */
+        .plate-cover {
+            position: absolute;
+            width: 260px; 
+            height: 180px;
+            background: linear-gradient(180deg, #ecf0f1 0%, #95a5a6 100%);
+            border-radius: 130px 130px 30px 30px;
+            top: 5px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.4s;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.7);
+        }
+
+        .cover-handle {
+            width: 45px;
+            height: 20px;
+            background: #2d3436;
+            border-radius: 20px 20px 0 0;
+            margin-top: -18px;
+        }
+
+        .cover-open {
+            transform: translateY(-210px) rotate(-15deg);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ប៊ូតុង */
+        .button-group {
+            margin-top: 80px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-family: 'Kantumruy Pro', sans-serif;
+            transition: 0.1s;
+        }
+
+        .btn-spin { background-color: #0984e3; box-shadow: 0 6px 0 #074b83; }
+        .btn-open { background-color: #00b894; box-shadow: 0 6px 0 #008168; }
+
+        .btn:active {transform: translateY(4px); box-shadow: none; }
+        .btn:disabled { background-color: #636e72; box-shadow: 0 6px 0 #2d3436; cursor: not-allowed; }
+
+        .spinning { animation: shake 0.1s infinite; }
+        @keyframes shake {
+            0% { transform: translate(2px, 1px); }
+            50% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, 1px); }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="app-container">
+        <div class="header">
+            <h2>តោះចាក់អាប៉ោងលេង</h2>
+            <p class="warning">តែកុំលេងមែនទែន</p>
+        </div>
 
-<nav id="nav">
-  <div class="nav-container">
+        <div class="game-area">
+            <div class="big-plate"></div>
+            <div class="dice-wrapper" id="dice-target">
+                <div class="back-stick"></div>
+                <div id="dice" class="dice">?</div>
+            </div>
+            <div id="cover" class="plate-cover">
+                <div class="cover-handle"></div>
+            </div>
+        </div>
 
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="../Assets/Image/anime.jpg">
-
-      <div class="logo-text">
-        <h1 class="km">សាកលវិទ្យាល័យជាតិជាស៊ីមកំចាយមារ</h1>
-        <h1 class="en">Chea Sim Kamchaymear National University</h1>
-
-        <p class="km">វិទ្យាស្ថានអភិវឌ្ឍន៍សហគមន៍</p>
-        <p class="en">Institute of Community Development</p>
-      </div>
+        <div class="button-group">
+            <button id="btn-spin" class="btn btn-spin" onclick="spin()">បង្វិល</button>
+            <button id="btn-open" class="btn btn-open" onclick="openPlate()" disabled>បើក</button>
+        </div>
     </div>
 
-    <!-- MENU -->
-    <div class="menu">
+    <script>
+        const dice = document.getElementById('dice');
+        const cover = document.getElementById('cover');
+        const target = document.getElementById('dice-target');
+        const bSpin = document.getElementById('btn-spin');
+        const bOpen = document.getElementById('btn-open');
 
-      <a href="../index.html">
-        <span class="km">ទំព័រដើម</span>
-        <span class="en">Home</span>
-      </a>
+        const faces = ['១', '២', '៣', '៤', '៥', '៦'];
 
-      <!-- INFO -->
-      <div class="dropdown">
+        function spin() {
+            cover.classList.remove('cover-open');
+            dice.innerText = "?";
+            bSpin.disabled = true;
+            bOpen.disabled = true;
 
-        <div class="dropdown-toggle">
-          <span class="km">ព័ត៌មាន</span>
-          <span class="en">Information</span> ▾
-        </div>
+            setTimeout(() => {
+                target.classList.add('spinning');
 
-        <div class="dropdown-content">
+                setTimeout(() => {
+                    target.classList.remove('spinning');
+                    dice.innerText = faces[Math.floor(Math.random() * faces.length)];
+                    bOpen.disabled = false;
+                    bSpin.disabled = false;
+                }, 1500);
+            }, 500);
+        }
 
-          <a href="../Life_Skills_Activities.html">
-            <span class="km">បំណិនជីវិត</span>
-            <span class="en">Life Skills</span>
-          </a>
-
-          <a href="../About_school.html">
-            <span class="km">ប្រវត្តិសាលា</span>
-            <span class="en">School History</span>
-          </a>
-
-          <a href="../DIctionary.html">
-            <span class="km">គ្រូបង្រៀន</span>
-            <span class="en">Teachers</span>
-          </a>
-
-          <a href="../Anungment.html">
-            <span class="km">កម្មវិធីនានា</span>
-            <span class="en">Events</span>
-          </a>
-
-          <a href="../Generl_study.html">
-            <span class="km">សកម្មភាពម៉ោងអនុវត្ត</span>
-            <span class="en">Practice Activities</span>
-          </a>
-
-          <a href="../Library.html">
-            <span class="km">បណ្ណាល័យទំនើប</span>
-            <span class="en">Modern Library</span>
-          </a>
-
-        </div>
-      </div>
-
-      <!-- SKILL -->
-      <div class="dropdown">
-
-        <div class="dropdown-toggle">
-          <span class="km">ជំនាញ</span>
-          <span class="en">Majors</span> ▾
-        </div>
-
-        <div class="dropdown-content">
-
-          <a href="../computer siecnce.html">
-            <span class="km">វិទ្យាសាស្រ្តកុំព្យូទ័រ</span>
-            <span class="en">Computer Science</span>
-          </a>
-
-          <a href="../Electronic.html">
-            <span class="km">អេឡិចត្រូនិក</span>
-            <span class="en">Electronics</span>
-          </a>
-
-          <a href="../Accounting.html">
-            <span class="km">គណនេយ្យ</span>
-            <span class="en">Accounting</span>
-          </a>
-
-          <a href="../Animal_husbanday.html">
-            <span class="km">ផលិតកម្មសត្វ</span>
-            <span class="en">Animal Husbandry</span>
-          </a>
-
-          <a href="../Agronomy.html">
-            <span class="km">ក្សេត្រសាស្រ្ត</span>
-            <span class="en">Agronomy</span>
-          </a>
-
-        </div>
-      </div>
-
-      <a href="../Community.html">
-        <span class="km">ទំនាក់ទំនង</span>
-        <span class="en">Contact</span>
-      </a>
-
-      <!-- LANGUAGE BUTTON -->
-      <div class="lang-btn">EN</div>
-
-      <!-- DARK MODE -->
-      <div class="mode">🎨</div>
-
-    </div>
-
-    <!-- HAMBURGER -->
-    <div class="hamburger">☰</div>
-
-  </div>
-</nav>
-
-<script></script>
+        function openPlate() {
+            cover.classList.add('cover-open');
+            bOpen.disabled = true;
+        }
+    </script>
 </body>
 </html>
