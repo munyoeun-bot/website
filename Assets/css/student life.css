@@ -35,9 +35,9 @@ a, .brand__subtitle {
 }
   
 
-body.dark .hero {
+/* body.dark .hero {
   background: linear-gradient(180deg, #020617 0%, #020617 60%);
-}
+} */
 
 
 .container {
