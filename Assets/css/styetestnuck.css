@@ -282,9 +282,10 @@ html, body {
 /* ================= Slider2 ================= */
 .slider4{
   position:relative;
-  width:100%;
+  width:130%;
   overflow:hidden;
-  padding:50px 0;
+  padding:10px 0;
+  padding-top: 0px;
   /* background:#f8fafc; */
 }
 
@@ -319,8 +320,8 @@ html, body {
 
 /* ITEM */
 .slider4 .item{
-  min-width:240px;
-  height:150px;
+  min-width:230px;
+  height:200px;
   margin:0 12px;
   /* border-radius:14px; */
   overflow:hidden;
