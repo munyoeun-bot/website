@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "title": "សាកលវិទ្យាល័យជាតិ​ជាស៊ីមកំចាយមារ",
+    "home": "ទំព័រដើម",
+    "information": "ព័ត៌មាន",
+    "skills": "ជំនាញ",
+    "contact": "ទំនាក់ទំនង",
+    "lifeSkills": "បំណិនជីវិត",
+    "aboutSchool": "ប្រវត្តិសាលា",
+    "teachers": "គ្រូបង្រៀន",
+    "programs": "កម្មពិធីនានា",
+    "practiceActivities": "សកម្មភាពម៉ោងអនុវត្ត",
+    "library": "បណ្ណាល័យទំនើប",
+    "cs": "វិទ្យាសាស្រ្តកំព្យូទ័រ"
+  },
+  "sections": {
+    "qualityEducation": "ការអប់រំគុណភាព",
+    "fiveSkills": "ជំនាញទាំងប្រាំ",
+    "news": "ព័ត៌មានថ្មីៗ"
+  },
+  "lang": {
+    "khmer": "ខ្មែរ",
+    "english": "English"
+  }
+
+ 
+}

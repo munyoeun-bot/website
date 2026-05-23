@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "title": "National University of Cheasim Komchaymear",
+    "home": "Home",
+    "information": "Information",
+    "skills": "Skills",
+    "contact": "Contact",
+    "lifeSkills": "Life Skills",
+    "aboutSchool": "About School",
+    "teachers": "Teachers",
+    "programs": "Programs",
+    "practiceActivities": "Practice Activities",
+    "library": "Modern Library",
+    "cs": "Computer Sience"
+  },
+  "sections": {
+    "qualityEducation": "Quality Education",
+    "fiveSkills": "Five Skills",
+    "news": "Latest News"
+  },
+  "lang": {
+    "khmer": "Khmer",
+    "english": "English"
+  },
+  "index": {
+    "welcome": "Welcome"
+  }
+}
