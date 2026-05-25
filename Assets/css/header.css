@@ -187,7 +187,7 @@ body.dark .hamburger {
 }
 
 .mode:hover {
-  background: var(--primary);
+  /* background: var(--primary); */
   transform: rotate(20deg) scale(1.1);
 }
 
