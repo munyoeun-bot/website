@@ -150,6 +150,7 @@ nav.shrink {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -220,6 +221,7 @@ body.dark .mode {
     position: static;
   }
 }
+
 /* DARK MODE */
 body.dark {
   /* background: var(--dark); */
@@ -271,122 +273,224 @@ header {
   width: 100%;
   z-index: 1000;
 }
+
 /* =======================
    LANGUAGE BUTTON ANIMATION
 ======================= */
 
-.lang-btn{
+.lang-btn {
 
-width:40px;
-height:40px;
+  width: 40px;
+  height: 40px;
 
-display:flex;
+  display: flex;
 
-align-items:center;
+  align-items: center;
 
-justify-content:center;
+  justify-content: center;
 
-border-radius:50%;
+  border-radius: 50%;
 
-overflow:hidden;
+  overflow: hidden;
 
-cursor:pointer;
+  cursor: pointer;
 
-border:2px solid var(--primary);
+  border: 2px solid var(--primary);
 
-transition:
-transform .35s ease,
-box-shadow .35s ease,
-background .35s ease;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
 
 }
 
 /* hover */
 
-.lang-btn:hover{
+.lang-btn:hover {
 
-transform:
-translateY(-3px)
-scale(1.08);
+  transform:
+    translateY(-3px) scale(1.08);
 
-box-shadow:
-0 10px 24px
-rgba(22,163,74,.28);
+  box-shadow:
+    0 10px 24px rgba(22, 163, 74, .28);
 
 }
 
 /* click */
 
-.lang-btn:active{
+.lang-btn:active {
 
-transform:
-scale(.92);
+  transform:
+    scale(.92);
 
 }
 
 /* flag */
 
-.lang-btn img{
+.lang-btn img {
 
-width:24px;
+  width: 24px;
 
-height:24px;
+  height: 24px;
 
-border-radius:50%;
+  border-radius: 50%;
 
-object-fit:cover;
+  object-fit: cover;
 
-transition:
-transform .45s ease,
-filter .3s ease;
+  transition:
+    transform .45s ease,
+    filter .3s ease;
 
 }
 
 /* rotate flag */
 
-.lang-btn:hover img{
+.lang-btn:hover img {
 
-transform:
-rotate(360deg);
+  transform:
+    rotate(360deg);
 
 }
 
 /* switch animation */
 
-.lang-btn.switch img{
+.lang-btn.switch img {
 
-animation:
-flagChange .45s ease;
+  animation:
+    flagChange .45s ease;
 
 }
 
-@keyframes flagChange{
+@keyframes flagChange {
 
-0%{
-opacity:.3;
-transform:
-scale(.7)
-rotate(-180deg);
-}
+  0% {
+    opacity: .3;
+    transform:
+      scale(.7) rotate(-180deg);
+  }
 
-50%{
-opacity:1;
-transform:
-scale(1.15);
-}
+  50% {
+    opacity: 1;
+    transform:
+      scale(1.15);
+  }
 
-100%{
-transform:
-scale(1)
-rotate(0);
-}
+  100% {
+    transform:
+      scale(1) rotate(0);
+  }
 
 }
 
 /* dark */
 
-body.dark .lang-btn:hover{
+body.dark .lang-btn:hover {
 
-background:#22c55e;
+  background: #22c55e;
 
+}
+
+/* LANGUAGE DROPDOWN */
+.lang-dropdown {
+  position: relative;
+  background: none;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.lang-toggle:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.lang-toggle img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 110px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  padding: 4px;
+  animation: fade 0.2s ease;
+  z-index: 1001;
+}
+
+.lang-menu.active {
+  display: flex;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  transition: all 0.2s ease;
+}
+
+.lang-option:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.lang-option img {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* Dark mode - language dropdown */
+body.dark .lang-toggle {
+  background: var(--primary);
+  color: white;
+  border-color: white;
+}
+
+body.dark .lang-toggle:hover {
+  background: #22c55e;
+}
+
+body.dark .lang-menu {
+  background: var(--primary);
+  border-color: white;
+}
+
+body.dark .lang-option {
+  color: white;
+}
+
+body.dark .lang-option:hover {
+  background: rgba(0, 0, 0, 0.2);
 }

@@ -59,9 +59,22 @@
         <a href="../Community.html" data-lang="contact">ទំនាក់ទំនង</a>
 
         <div class="mode">🌙</div>
-        <div class="lang-btn" onclick="toggleLang()">
-  <img id="langIcon" src="https://flagcdn.com/w40/kh.png">
-</div>
+        <div class="lang-dropdown" style="background-color: while;">
+          <button class="lang-toggle" id="langToggle">
+            <img id="langIcon" src="https://flagcdn.com/w40/kh.png">
+            <span id="langText">KH ▾</span>
+          </button>
+          <div class="lang-menu">
+            <button class="lang-option" data-lang="kh">
+              <img src="https://flagcdn.com/w40/kh.png" alt="Khmer">
+              KH
+            </button>
+            <button class="lang-option" data-lang="en">
+              <img src="https://flagcdn.com/w40/gb.png" alt="English">
+              EN
+            </button>
+          </div>
+        </div>
 
       </div>
 

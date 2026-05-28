@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.getElementById("header").innerHTML = data;
       initHeader();
+      applyLang();
+      setupLanguageHandlers();
     });
 
   fetch("./Components/footer.html")

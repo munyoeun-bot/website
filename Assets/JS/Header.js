@@ -1,8 +1,7 @@
-// =======================
-// LANGUAGE SYSTEM (FIXED)
-// =======================
-let lang = localStorage.getItem("lang") || "kh";
 
+
+
+let lang = localStorage.getItem("lang") || "kh";
 const text = {
   kh: {
     //nav bar
@@ -183,9 +182,36 @@ const text = {
     evc6p:"ថ្ងៃទី២៦ ខែកញ្ញា ឆ្នាំ២០២៤ ការអញ្ជើញមកដល់នៃទស្សនកិច្ចរបស់នាយកដ្ឋានឧត្តមសិក្សានាយកដ្ឋានតម្រង់ទិសនិងវិជ្ជាជីវៈ ជាមួយគណ:ប្រតិភូ មកពីសហភាពអ៉ឺរ៉ុបស្ដីពីការពន្លឿនកម្មវិធីសិក្សាថ្នាក់អប់រំបច្ចេកទេសនៅវិទ្យាស្ថានអភិវឌ្ឍន៍សហគមន៍នៃសាកលវិទ្យាល័យជាតិជាស៊ីមកំចាយមារ។",
     evc7:"អបអរសាទរការដ្ធានសាងសង់",
     evc7p:"ថ្ងៃទី៥ ខែសីហា ឆ្នាំ២០២៤វិទ្យាស្ថានអភិវឌ្ឍន៍សហគមន៍នៃសាកលវិទ្យាល័យជាតិជាស៊ីមកំចាយមារបានប្រារព្ធពិធីអបអរសាទរការបើកការដ្ឋានសាងសង់ព្រែកជីកហ្វូណនតេជោរ​",
-
+    //library
+    lytitle:"រូបភាពនិងសកម្មភាពមួយចំនួនរបស់សិស្សានុសិស្ស",
+    lyh2:"អំពីបណ្ណាល័យ",
+    lyb1:"📖 សៀវភៅច្រើន",
+    lyb1p:"បណ្ណាល័យមានសៀវភៅជាច្រើនប្រភេទសម្រាប់សិស្សគ្រប់មុខវិជ្ជា។",
+    lyb2:"​🧠 កន្លែងសិក្សា ",
+    lyb2p:"បរិយាកាសស្ងប់ស្ងាត់សម្រាប់ការសិក្សា និងស្រាវជ្រាវ។",
+    lyb3:"💻 ផ្តល់កន្លែងការងារក្រុម",
+    lyb3p:"ផ្តល់កន្លែងការងារក្រុម សម្រាប់ពិភិក្សាគម្រោង",
+    //acro
+    ag:"ជំនាញ ក្សេត្រសាស្រ្ត",
+    agp:"យើងផ្តល់ការអប់រំគុណភាពខ្ពស់ ដើម្បីអភិវឌ្ឍសិស្សឲ្យមានចំណេះដឹង និងជំនាញសម្រាប់អនាគត។",
   },
   en: {
+    //acro
+    ag:"Agricultural Skills",
+    agp:"We provide high-quality education to develop students' knowledge and skills for the future.",
+
+
+
+    //library
+    lyb3:"💻 A place for group work",
+    lyb3p:"Provides a space for group work and project discussions.",
+    lyb2p:"A quiet atmosphere for studying and research.",
+    lyb2:"🧠 A place for study",
+    lyb1p:"The library has a wide variety of books for students of all majors.",
+    lyb1:"📖 A wide variety of books",
+    lytitle:"Some photos and activities of students",
+    lyh2:"About the Library",
+
     //event
     evc7p:"On August 5, 2024, the Institute of Community Development of Chea Sim Kamchaymear National University celebrated the groundbreaking ceremony for the construction of the Funan Techo Canal.",
     evc7:"Celebrating the groundbreaking ceremony for the construction",
@@ -381,10 +407,14 @@ function applyLang() {
   });
 
   const icon = document.getElementById("langIcon");
+  const langTextEl = document.getElementById("langText");
   if (icon) {
     icon.src = lang === "kh"
       ? "https://flagcdn.com/w40/kh.png"
       : "https://flagcdn.com/w40/gb.png";
+  }
+  if (langTextEl) {
+    langTextEl.textContent = lang === "kh" ? "KH" : "EN";
   }
 }
 
@@ -459,17 +489,37 @@ if (hamburger) {
 // =======================
 // LANGUAGE DROPDOWN HANDLER
 // =======================
-document.querySelectorAll(".lang-option").forEach(option => {
-  option.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const selectedLang = option.getAttribute("data-lang");
-    lang = selectedLang;
-    localStorage.setItem("lang", lang);
-    applyLang();
-    
-    // close dropdown
-    document.querySelector(".lang-dropdown").classList.remove("active");
-  });
+function setupLanguageHandlers() {
+  const langToggle = document.getElementById("langToggle");
+  const langMenu = document.querySelector(".lang-menu");
+  const langDropdown = document.querySelector(".lang-dropdown");
+
+  if (langToggle) {
+    langToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".lang-option").forEach(option => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const selectedLang = option.getAttribute("data-lang");
+        lang = selectedLang;
+        localStorage.setItem("lang", lang);
+        applyLang();
+        langMenu.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!langDropdown.contains(e.target)) {
+        langMenu.classList.remove("active");
+      }
+    });
+  }
+}
+
+// Call on page load
+window.addEventListener("DOMContentLoaded", () => {
+  setupLanguageHandlers();
 });
