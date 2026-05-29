@@ -494,3 +494,9 @@ body.dark .lang-option {
 body.dark .lang-option:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+body.dark .profile-content h2{
+    color:var(--primary);
+}
+body.dark .profile-content p{
+    color:#000000;
+}
