@@ -9,6 +9,7 @@ body{
     font-family:"Kantumruy Pro", sans-serif;
     background:#f7fee7;
     color:#1f2937;
+    font-style:justify;
 }
 
 /* HERO */
@@ -54,11 +55,23 @@ body{
   padding:0 20px;
   animation:fadeUp 1s ease;
 }
+.hero-content{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(2px);
+
+  padding: 30px;
+  border-radius: 20px;
+}
 
 .hero-content h1{
   font-size:42px;
   margin-bottom:12px;
-  color: #15803d;
+  color: var(--primary);
+  background:linear-gradient(90deg,#ceb01b,var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
 }
 
 .hero-content p{
