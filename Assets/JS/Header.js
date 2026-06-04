@@ -399,10 +399,22 @@ const text = {
     elch5:"🔌 ថ្នាក់ឆ្នាំទី២ ៖",
     elch6:"🔌 ថ្នាក់ឆ្នាំទី២ ៖",
     elch7:"សកម្មភាពសិក្សា និង អនុវត្ត",
-  
-  
+    //generl-studay
+    gst1:"រូបភាពនិងសកម្មភាពមួយចំនួនទៅតាមជំនាញនីមួយៗ",
+    gst2:"សកម្មភាពសិស្សកំពុងយកសំណាកនិងអនុវត្តផ្ទាល់ទៅលើសត្វមាន់។",
+    gst3:"ផលិតកម្មសត្វ​ និង បសុព្យាបាល",
+    gst4:"អេឡិចត្រូនិច",
+    gst5:"ក្សេត្រសាស្រ្ត",
+    gst6:"វិទ្យាសាស្ត្រកុំព្យូទ័រ",
   },
   en: {
+    //generl-study
+    gst6:"Computer Science",
+    gst5:"Agronomy",
+    gst4:"Electronic",
+    gst3:"“Animal production and veterinary medicine.",
+    gst2:"Students are collecting samples and carrying out hands-on practice on chickens.",
+    gst1:"Images and some activities for each specialization.",
     //elc
     elch7:"Learning and Practical Activities",
     elch6:"🔌 Year 3",
