@@ -40,6 +40,24 @@
   color: #22c55e;
   margin-bottom: 10px;
 }
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ចន្លោះរវាងបន្ទាត់ */
+  text-align: center;
+  align-items: center;
+}
+
+.footer-box h3,h2 {
+  display: flex;
+  align-items: center; /* ឲ្យ icon និងអត្ថបទស្មើតាមបន្ទាត់ */
+  margin: 0;
+}
+
+.footer-box img {
+  margin-right: 8px; /* ចន្លោះរវាង icon និងអត្ថបទ */
+}
+
 
 /* LINKS */
 .footer-box a {

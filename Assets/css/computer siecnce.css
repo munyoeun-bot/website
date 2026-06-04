@@ -307,7 +307,7 @@ body {
 
 /* CARD */
 .card4{
-    background-color: var(--primary);
+   
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
@@ -335,17 +335,18 @@ body {
 /* CONTENT */
 .content4{
     padding:15px;
+    
 }
 
 .content4 h3{
     font-size:20px;
-    color:var(--gold);
+    color:#22c55e;
     margin-bottom:10px;
 }
 
 .content4 p{
     font-size:15px;
-    color:white;
+    color:rgb(8, 8, 8);
     line-height:1.6;
 }
 
@@ -370,6 +371,74 @@ body {
 @media(max-width:600px){
     .container4{
         grid-template-columns:1fr;
+    }
+}
+
+.section3{
+    padding:70px 10%;
+}
+
+.title3{
+    text-align:center;
+    font-size:34px;
+    color:var(--primary);
+    margin-bottom:40px;
+}
+
+.grid3{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+
+.card3{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    border-bottom:4px solid #22c55e;
+    transition:0.4s;
+}
+
+.card3:hover{
+    transform:translateY(-8px);
+    background:#ecfdf5;
+}
+
+.card3 h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.card3 p{
+    font-size:14px;
+    color:var(--dark);
+    line-height:1.6;
+}
+/* ================= ANIMATION ================= */
+.card3, .card4{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .grid3,.grid4{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+    .grid3,.grid4{
+        grid-template-columns:1fr;
+    }
+
+    .hero-agri h1{
+        font-size:28px;
     }
 }
 

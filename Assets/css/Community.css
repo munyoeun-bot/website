@@ -147,10 +147,27 @@ body{
     backdrop-filter:blur(10px);
 }
 
+
 .info3 h2{
     color:#38bdf8;
     margin-bottom:15px;
 }
+.info3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ចន្លោះរវាងបន្ទាត់ */
+}
+
+.info3 p {
+  display: flex;
+  align-items: center; /* ឲ្យ icon និងអត្ថបទស្មើតាមបន្ទាត់ */
+  margin: 0;
+}
+
+.info3 img {
+  margin-right: 8px; /* ចន្លោះរវាង icon និងអត្ថបទ */
+}
+
 
 .info3 p{
     margin:10px 0;
@@ -177,6 +194,26 @@ body{
     gap:10px;
     margin-bottom:20px;
 }
+.btn-group3 {
+  display: flex;
+  flex-direction: column; /* ឬ row ប្រសិនបើចង់ជួរតាមបន្ទាត់ */
+  gap: 10px; /* ចន្លោះរវាង buttons */
+  text-align: center;
+}
+
+.btn3 {
+  display: flex;
+   /* ឲ្យ icon និងអត្ថបទស្មើតាមបន្ទាត់ */
+  /* padding: 8px 12px; */
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn3 img {
+  margin-right: 8px; /* ចន្លោះរវាង icon និងអត្ថបទ */
+}
+
 
 .btn3{
     text-decoration:none;
@@ -196,9 +233,20 @@ body{
 }
 
 /* SOCIAL */
-.social3 p{
-    margin-bottom:10px;
-    color: #000000;
+.social3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ចន្លោះរវាងបន្ទាត់ */
+}
+
+.social3 p {
+  display: flex;
+  align-items: center; /* ឲ្យ icon និងអត្ថបទស្មើតាមបន្ទាត់ */
+  margin: 0;
+}
+
+.social3 img {
+  margin-right: 8px; /* ចន្លោះរវាង icon និងអត្ថបទ */
 }
 
 .icons3{
@@ -218,6 +266,22 @@ body{
     margin-top:15px;
     color:#030405;
 }
+.time3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ចន្លោះរវាងបន្ទាត់ */
+}
+
+.time3 p {
+  display: flex;
+  align-items: center; /* ឲ្យ icon និងអត្ថបទស្មើតាមបន្ទាត់ */
+  margin: 0;
+}
+
+.time3 img {
+  margin-right: 8px; /* ចន្លោះរវាង icon និងអត្ថបទ */
+}
+
 
 /* ================= SECTION 4 ================= */
 .section4{

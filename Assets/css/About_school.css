@@ -197,6 +197,13 @@ body{
     color: #137e38;
     margin-bottom:10px;
 }
+p[data-lang="abfirstp"] {
+  margin: 0;          /* លុបចន្លោះខាងលើ/ក្រោម */
+  padding: 0;         /* លុបចន្លោះខាងក្នុង */
+  line-height: 1.4;   /* កំណត់ចន្លោះបន្ទាត់តិចជាងមុន */
+  text-align: justify; /* ឲ្យអក្សរចែកស្មើទាំងជួរ */
+}
+
 
 .history4 p{
     line-height:1.8;
