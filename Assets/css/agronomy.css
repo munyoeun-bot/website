@@ -57,7 +57,7 @@ body{
 }
 .hero-content{
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 
   padding: 30px;
   border-radius: 20px;
@@ -67,7 +67,7 @@ body{
   font-size:42px;
   margin-bottom:12px;
   color: var(--primary);
-  background:linear-gradient(90deg,#ceb01b,var(--primary));
+  background:var(--primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
