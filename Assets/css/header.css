@@ -475,7 +475,7 @@ body.dark .lang-btn:hover {
 body.dark .lang-toggle {
   background: var(--primary);
   color: white;
-  border-color: rgb(169, 12, 12);
+  border-color: rgb(255, 255, 255);
 }
 
 

@@ -3,12 +3,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./Assets/JS/include.js"></script>
+    <style>
+/* ==========================
+   Major Subjects Section
+========================== */
+
+.major-section{
+    width:100%;
+    padding:80px 20px;
+    background:#f8fafc;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2rem;
+    color:#16a34a;
+    margin-bottom:40px;
+}
+
+.major-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.major-box{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+
+    border-top:5px solid #16a34a;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.major-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+.major-box h3{
+    color:#16a34a;
+    margin-bottom:15px;
+    font-size:1.35rem;
+}
+
+.major-box p{
+    color:#555;
+    line-height:1.8;
+    text-align:justify;
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    .major-container{
+        grid-template-columns:1fr;
+    }
+
+    .major-box{
+        padding:25px;
+    }
+
+    .section-title{
+        font-size:1.7rem;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+    .major-section{
+        padding:60px 15px;
+    }
+
+    .major-box{
+        padding:20px;
+    }
+
+    .section-title{
+        font-size:1.4rem;
+    }
+
+    .major-box h3{
+        font-size:1.15rem;
+    }
+
+    .major-box p{
+        font-size:.95rem;
+    }
+
+}
+    </style>
 </head>
 <body>
-    <div>
-        <header id="header"></header>
+<section class="major-section">
+
+    <h2 class="section-title">Major Subjects by Academic Year</h2>
+
+    <div class="major-container">
+
+        <div class="major-box">
+            <h3>📘 Year 1</h3>
+            <p>
+                Introduction to Programming, Computer Fundamentals,
+                Mathematics, English for IT, Digital Logic,
+                Communication Skills.
+            </p>
+        </div>
+
+        <div class="major-box">
+            <h3>📗 Year 2</h3>
+            <p>
+                Data Structures, Object-Oriented Programming,
+                Database Systems, Web Development,
+                Computer Networks, Statistics.
+            </p>
+        </div>
+
+        <div class="major-box">
+            <h3>📙 Year 3</h3>
+            <p>
+                Software Engineering, Operating Systems,
+                Mobile Application Development,
+                Network Security, System Analysis & Design.
+            </p>
+        </div>
+
+        <div class="major-box">
+            <h3>🎓 Year 4</h3>
+            <p>
+                Artificial Intelligence, Cloud Computing,
+                Project Management, Internship,
+                Research Methodology, Senior Project.
+            </p>
+        </div>
+
     </div>
-    <div id="footer"></div>
+
+</section>
 </body>
 </html>
