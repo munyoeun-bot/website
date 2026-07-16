@@ -178,17 +178,17 @@
     border-bottom:4px solid #22c55e;
     transition:0.4s;
 }
-
+.card3 h2{
+    text-align: center;
+}
 .card3:hover{
     transform:translateY(-8px);
     background:#ecfdf5;
 }
-
 .card3 h3{
     color:var(--primary);
     margin-bottom:10px;
 }
-
 .card3 p{
     font-size:14px;
     color:#475569;
