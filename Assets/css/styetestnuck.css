@@ -37,8 +37,21 @@ html, body {
   margin-bottom:40px;
   color:var(--primary-600);
   font-size:28px;
+  
 }
-
+.center1{
+  margin-left: 0%;
+}
+.center2{
+  margin-left: 0%;
+}
+.center3{
+  margin-left: 0%;
+}
+.center4{
+  margin-left: 5%;
+  font-size: 12px;
+}
 /* GRID */
 .cards{
   display:grid;
@@ -69,8 +82,8 @@ html, body {
 }
 
 .card-content{
-  padding:18px;
-  background-color: #ffffff;
+  padding: 18px;;
+  /* background-color: #ffffff; */
 }
 
 .card h3{
