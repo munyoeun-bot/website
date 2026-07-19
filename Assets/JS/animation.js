@@ -65,9 +65,9 @@ prev.onclick=()=>{
 };
 
 // auto
-setInterval(()=>{
-  index=(index+1)%slide.length;
-  update();
-},9000);
+// setInterval(()=>{
+//   index=(index+1)%slide.length;
+//   update();
+// },);
 
-update();
+// update();

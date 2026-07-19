@@ -62,6 +62,9 @@ body{
     line-height:1.7;
     color:#030303;
 }
+.desc , p{
+    line-height: 1.7;
+}
 .dark .desc{
     font-size:14px;
     line-height:1.7;
@@ -73,11 +76,12 @@ body{
 @media(max-width:768px){
     .profile{
         flex-direction:column;
-        text-align:center;
+        text-align:left;
     }
 
     .profile-img img{
         margin:auto;
+        align-items: center;
     }
 }
 

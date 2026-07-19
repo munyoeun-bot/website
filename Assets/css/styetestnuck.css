@@ -118,6 +118,10 @@ html, body {
 
 @media (max-width:480px){
   .card img{height:150px;}
+  
+}@media (max-width:768px){
+  .content{magin-top:10%;}
+  
 }
 
 
@@ -207,8 +211,8 @@ html, body {
 /* ================= TEXT BOX ================= */
 .content{
   position:absolute;
-  top:50%;
-  left:70px;
+  top:80%;
+  left:10px;
   transform:translateY(-50%);
   max-width:420px;
 
@@ -222,7 +226,7 @@ html, body {
 
 .content h2{
   font-size:28px;
-  margin:0 0 10px;
+  margin:0 0 0px;
   background:linear-gradient(90deg,#fff,#d4af37);
   -webkit-background-clip:text;
   background-clip:text;
